@@ -27,15 +27,25 @@ describe("sentenceGenerator", () => {
 
 // JEST "GOOD" FAILURE
 
-  // ● sentenceGenerator › takes in an array of objects and returns an array with a sentence about each person with their name capitalized.
+//  ● sentenceGenerator › takes in an array of objects and returns an array with a sentence about each person with their name capitalized.
 
-  // ReferenceError: sentenceGenerator is not defined
+//   ReferenceError: sentenceGenerator is not defined
 
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."]
 
 
 
-// b) Create the function that makes the test pass.
+// b) Create the function that makes the test pass. 
+
+// *** STUDENT NOTE **** 
+
+//  I used quite a bit more pseudo code than I typically would. This problem was quite challenging for me to wrap my head around programatically. So, please excuse the 'wordy' pseudo code.
+
+// Create FUNCTION "sentenceGenerator" that takes in ARRAY
+// Need to RETURN the passed in array and .MAP over each Array(VALUE) to .split the names
+// So the .map HOF needs to Split on the VALUE.NAME element on each Array element so I can target the 1st letters in the names next <-- <-- (set as VAR "splitArray")
+// Now take the newly created array of split values (as VAR uppercaseArray) and .toUpperCase the names at the indexes **[0][0]** concatnate with + and .substring to bring letters/words back together. 
+// Should be able to now RETURN via STRING INTERPOLATION to bring the newly capitalized NAMES into a sentence with corresponding occupation VALUES.
 
 const sentenceGenerator = (array) => {
   return array.map((value) => {
@@ -44,7 +54,20 @@ const sentenceGenerator = (array) => {
     return `${uppercaseArray} is ${value.occupation}`
   })
 }
-// console.log(sentenceGenerator(people))
+
+
+// JEST TEST PASS
+
+// PASS./ code - challenges.test.js
+
+// sentenceGenerator
+
+//     ✓ takes in an array of objects and returns an array with a sentence about each person with their name capitalized. (1 ms)
+
+
+
+
+
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
 // a) Create a test with an expect statement using the variables provided.
@@ -61,9 +84,12 @@ const sentenceGenerator = (array) => {
 //   })
 // })
 
-
-
 // b) Create the function that makes the test pass.
+
+// Fuction ONLYNUMBERS takes in ARRAY
+// FILTER over the ARRAY elements -> Condition? TYPEOF === NUMBER     <<<< set as variable getNumbers
+// MAP over newArray elements and %= 3 on each     <<<< set as variable remainders
+// RETURN remainders
 
 const onlyNumbers = (array) => {
   let getNumbers = array.filter(element => typeof element === 'number')
