@@ -14,12 +14,25 @@
 
 // a) Create a test with an expect statement using the variable provided.
 
-const people = [
-  { name: "ford prefect", occupation: "a hitchhiker" },
-  { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
-  { name: "arthur dent", occupation: "a radio employee" }
-]
+describe("sentenceGenerator", () => {
+  it("takes in an array of objects and returns an array with a sentence about each person with their name capitalized.", () => {
+    const people = [
+      { name: "ford prefect", occupation: "a hitchhiker" },
+      { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+      { name: "arthur dent", occupation: "a radio employee" }
+    ]
+    expect(sentenceGenerator(people)).toEqual(["Ford Prefect is a hitchhiker", "Zaphod Beeblebrox is president of the galaxy", "Arthur Dent is a radio employee"])
+  })
+})
+
+// JEST "GOOD" FAILURE
+
+  // ● sentenceGenerator › takes in an array of objects and returns an array with a sentence about each person with their name capitalized.
+
+  // ReferenceError: sentenceGenerator is not defined
+
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."]
+
 
 
 // b) Create the function that makes the test pass.
@@ -31,15 +44,23 @@ const sentenceGenerator = (array) => {
     return `${uppercaseArray} is ${value.occupation}`
   })
 }
-
+// console.log(sentenceGenerator(people))
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
 // a) Create a test with an expect statement using the variables provided.
 
-const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
-// Expected output: [ 2, 0, -1, 0 ]
-const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
-// Expected output: [ 2, 1, -1 ]
+// describe("onlyNumbers", () => {
+//   it("takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0", () => {
+//     const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+//     // Expected output: [ 2, 0, -1, 0 ]
+//     const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+//     // Expected output: [ 2, 1, -1 ]
+//     expect(onlyNumbers(secretCodeWord1)).toEqual("L4ck4d41s1c4l")
+//     expect(onlyNumbers(secretCodeWord2)).toEqual("G0bbl3dyg00k")
+//     expect(onlyNumbers(secretCodeWord3)).toEqual("3cc3ntr1c")
+//   })
+// })
+
 
 
 // b) Create the function that makes the test pass.
