@@ -37,15 +37,15 @@ describe("sentenceGenerator", () => {
 
 // b) Create the function that makes the test pass. 
 
-// *** STUDENT NOTE **** 
+    // *** STUDENT NOTE **** 
 
-//  I used quite a bit more pseudo code than I typically would. This problem was quite challenging for me to wrap my head around programatically. So, please excuse the 'wordy' pseudo code.
+    //  I used quite a bit more pseudo code than I typically would. This problem was quite challenging for me to wrap my head around programatically. So, please excuse the 'wordy' pseudo code.
 
-// Create FUNCTION "sentenceGenerator" that takes in ARRAY
-// Need to RETURN the passed in array and .MAP over each Array(VALUE) to .split the names
-// So the .map HOF needs to Split on the VALUE.NAME element on each Array element so I can target the 1st letters in the names next <-- <-- (set as VAR "splitArray")
-// Now take the newly created array of split values (as VAR uppercaseArray) and .toUpperCase the names at the indexes **[0][0]** concatnate with + and .substring to bring letters/words back together. 
-// Should be able to now RETURN via STRING INTERPOLATION to bring the newly capitalized NAMES into a sentence with corresponding occupation VALUES.
+    // Create FUNCTION "sentenceGenerator" that takes in ARRAY
+    // Need to RETURN the passed in array and .MAP over each Array(VALUE) to .split the names
+    // So the .map HOF needs to Split on the VALUE.NAME element on each Array element so I can target the 1st letters in the names next <-- <-- (set as VAR "splitArray")
+    // Now take the newly created array of split values (as VAR uppercaseArray) and .toUpperCase the names at the indexes **[0][0]** concatnate with + and .substring to bring letters/words back together. 
+    // Should be able to now RETURN via STRING INTERPOLATION to bring the newly capitalized NAMES into a sentence with corresponding occupation VALUES.
 
 const sentenceGenerator = (array) => {
   return array.map((value) => {
@@ -56,13 +56,13 @@ const sentenceGenerator = (array) => {
 }
 
 
-// JEST TEST PASS
+    // JEST TEST PASS
 
-// PASS./ code - challenges.test.js
+    // PASS./ code - challenges.test.js
 
-// sentenceGenerator
+    // sentenceGenerator
 
-//     ✓ takes in an array of objects and returns an array with a sentence about each person with their name capitalized. (1 ms)
+    //     ✓ takes in an array of objects and returns an array with a sentence about each person with their name capitalized. (1 ms)
 
 
 
@@ -72,24 +72,30 @@ const sentenceGenerator = (array) => {
 
 // a) Create a test with an expect statement using the variables provided.
 
-// describe("onlyNumbers", () => {
-//   it("takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0", () => {
-//     const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
-//     // Expected output: [ 2, 0, -1, 0 ]
-//     const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
-//     // Expected output: [ 2, 1, -1 ]
-//     expect(onlyNumbers(secretCodeWord1)).toEqual("L4ck4d41s1c4l")
-//     expect(onlyNumbers(secretCodeWord2)).toEqual("G0bbl3dyg00k")
-//     expect(onlyNumbers(secretCodeWord3)).toEqual("3cc3ntr1c")
-//   })
-// })
+describe("onlyNumbers", () => {
+  it("takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3", () => {
+    const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+    // Expected output: [ 2, 0, -1, 0 ]
+    const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+    // Expected output: [ 2, 1, -1 ]
+    expect(onlyNumbers(hodgepodge1)).toEqual([2, 0, -1, 0])
+    expect(onlyNumbers(hodgepodge2)).toEqual([2, 1, -1])
+  })
+})
+
+    // JEST "GOOD" FAILURE
+
+    //  ● onlyNumbers › takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3
+
+    // ReferenceError: onlyNumbers is not defined
+
 
 // b) Create the function that makes the test pass.
 
-// Fuction ONLYNUMBERS takes in ARRAY
-// FILTER over the ARRAY elements -> Condition? TYPEOF === NUMBER     <<<< set as variable getNumbers
-// MAP over newArray elements and %= 3 on each     <<<< set as variable remainders
-// RETURN remainders
+    // Fuction ONLYNUMBERS takes in ARRAY
+    // FILTER over the ARRAY elements -> Condition? TYPEOF === NUMBER     <<<< set as variable getNumbers
+    // MAP over newArray elements and %= 3 on each     <<<< set as variable remainders
+    // RETURN remainders
 
 const onlyNumbers = (array) => {
   let getNumbers = array.filter(element => typeof element === 'number')
@@ -97,18 +103,47 @@ const onlyNumbers = (array) => {
   return remainders
 }
 
+    // JEST TEST PASS
+
+    //  PASS  ./code-challenges.test.js
+
+    // onlyNumbers
+    
+    //     ✓ takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3(1 ms)
+
+
+
+
 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
 // a) Create a test with an expect statement using the variables provided.
 
-const cubeAndSum1 = [2, 3, 4]
-// Expected output: 99
-const cubeAndSum2 = [0, 5, 10]
-// Expected output: 1125
+describe("sumCubed", () => {
+  it("takes in an array of numbers and returns the sum of all the numbers cubed", () => {
+    const cubeAndSum1 = [2, 3, 4]
+    // Expected output: 99
+    const cubeAndSum2 = [0, 5, 10]
+    // Expected output: 1125
+    expect(sumCubed(cubeAndSum1)).toEqual(99)
+    expect(sumCubed(cubeAndSum2)).toEqual(1125)
+  })
+})
+
+    // JEST "GOOD" FAILURE
+
+    //   ● sumCubed › takes in an array of numbers and returns the sum of all the numbers cubed
+
+    // ReferenceError: sumCubed is not defined
 
 
 // b) Create the function that makes the test pass.
+
+    // FUNCTION sumCubed takes in ARRAY
+    // MAP over each Array Elemenmt and ** 3 on each.     <<<< set as Variable "cubed"
+    // Create "sum" variable to hold the value of "cubed".REDUCE (total, num)
+    // should be able to return the total PLUS num which came with the .reduce method
+    // finally return sum
 
 const sumCubed = (array) => {
   let cubed = array.map(element => element ** 3)
@@ -117,3 +152,11 @@ const sumCubed = (array) => {
   })
   return sum
 }
+
+    // JEST TEST PASS
+
+    // PASS./ code - challenges.test.js
+
+    // sumCubed
+
+    //     ✓ takes in an array of numbers and returns the sum of all the numbers cubed(1 ms)
