@@ -24,6 +24,13 @@ const people = [
 
 // b) Create the function that makes the test pass.
 
+const sentenceGenerator = (array) => {
+  return array.map((value) => {
+    let splitArray = value.name.split(' ')
+    let uppercaseArray = splitArray[0][0].toUpperCase() + splitArray[0].substring(1) + " " + splitArray[1][0].toUpperCase() + splitArray[1].substring(1)
+    return `${uppercaseArray} is ${value.occupation}`
+  })
+}
 
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
@@ -37,6 +44,12 @@ const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 
 // b) Create the function that makes the test pass.
 
+const onlyNumbers = (array) => {
+  let getNumbers = array.filter(element => typeof element === 'number')
+  let remainders = getNumbers.map(element => element %= 3)
+  return remainders
+}
+
 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
@@ -49,3 +62,11 @@ const cubeAndSum2 = [0, 5, 10]
 
 
 // b) Create the function that makes the test pass.
+
+const sumCubed = (array) => {
+  let cubed = array.map(element => element ** 3)
+  let sum = cubed.reduce(function (total, num) {
+    return total + num;
+  })
+  return sum
+}
