@@ -23,27 +23,27 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 3. Name three rails generator commands. What is created by each?
 
-  Your answer:
+  Your answer: I believe an instructor told us that the first generator we learned was actually the command we run to create a "new rails application". Of course during this generation, an entire application is created. The next generator we learned was `rails generate model .....` This command creates the model or "table columns" that will be tracked in our db. Another command we learned recently was `rails generate resource...` which generated many more things than generate model did, including generating a model for us.
 
-  Researched answer:
+  Researched answer: Rails generator commands simplify and streamline the Rails development process. Beyond the answer I just gave, another very cool Rails generator is the `rails generate scaffold` because this one gives us a controller as well opens up routes to other parts of our project.
 
 
 
 4. Consider the Rails routes below. What is the name of the controller method that would be called by each route? What action would each of the controller methods perform?
 
-action: "GET"    location: /students          
+action: "GET"    location: /students `Method: index - shows all students`         
 
-action: "POST"   location: /students       
+action: "POST"   location: /students  `Method: create -  creates a new student in students`     
 
-action: "GET"    location: /students/new
+action: "GET"    location: /students/new `Method: new - creates a path to render the new student information`
 
-action: "GET"    location: /students/2  
+action: "GET"    location: /students/2  `Method: show - gets/shows a specific student with the id of 2`
 
-action: "GET"    location: /students/2/edit    
+action: "GET"    location: /students/2/edit   `Medhod: edit - edits a specific student with the id of 2`
 
-action: "PATCH"  location: /students/2      
+action: "PATCH"  location: /students/2  `Method: update - updates a specific student with the id of 2`
 
-action: "DELETE" location: /students/2      
+action: "DELETE" location: /students/2  `Method: delete - removes a specific student with the id of 2`
 
 
 
