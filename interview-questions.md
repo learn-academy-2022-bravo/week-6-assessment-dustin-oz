@@ -48,3 +48,16 @@ action: "DELETE" location: /students/2  `Method: delete - removes a specific stu
 
 
 5. As a developer, you are making an application to manage your to do list. Create 10 user stories that will help you get your application started. Read more about [user stories](https://www.atlassian.com/agile/project-management/user-stories).
+
+### To-do list User Stories
+- As a user, I can see a list of all unfinished to-do's
+- As a user, I can login/out to view/hide protected to-dos
+- As a user, I can add new to-dos to the list via an add button
+  - As a user, I can add a To-do Title
+  - As a user, I can add a To-do Description
+  - As a user, I can add pictures to a to-do
+  - As a user, I can set a Due Date on a to-do
+- As a user, I can mark a to-do as complete
+- As a user, I can update a to-do
+- As a user, I can delete a to-do
+- As a user, I can share to-dos on social media
